@@ -1,4 +1,4 @@
-daisynav
+DaisyNav - jQuery plugin with CSS Dropdown
 ========
 
 DaisyNav - jQuery plugin that handle responsive navigation in good way.
