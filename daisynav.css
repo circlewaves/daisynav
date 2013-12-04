@@ -1,0 +1,136 @@
+/* Menu Styles */
+
+/* Init Logic */
+.menu-toggle-button{padding:1em;border:1px solid #000;cursor:pointer;}
+.menu-toggle-button{display:none;}
+.menu-toggle-button.active{border:1px solid #777;color:#777;}
+
+ul.menu-list{list-style:none;position:relative;display:inline-table;padding:0px;margin:0px;height:100%}
+ul.menu-list li{float:left;position:relative;}
+ul.menu-list li a{display:inline-block;}
+ul.menu-list li a{display:block;}
+
+/* Handling Submenu */
+ul.menu-list ul{display:none;padding:0px;margin:0px;position:absolute;top:100%;left:0%;list-style:none;z-index: 700}
+ul.menu-list ul li{position:relative;float:none;padding:0px;margin:0px;}
+ul.menu-list ul ul{position:absolute;top:0%;left:100%;z-index: 700}
+ul.menu-list li:hover>ul{display:inline-block;}
+/* End Init Logic */
+
+/* Style */
+
+ul.menu-list li:hover>ul{background:#fff!ie;} /* Fix for IE7 */
+
+/* Submenu Expand Icon */
+ul.menu-list li.has-submenu>a>span.menu-expand{font-size: 0.6em;float:right;padding-left:10px;line-height:2.2em;} /* All levels */
+ul.menu-list li.has-submenu>a>span.menu-expand{float:none\9;} /* Fix for IE9 and below */
+ul.menu-list>li.has-submenu>a>span.menu-expand{} /* Level 1 */
+ul.menu-list>li.has-submenu>a>span.menu-expand:after{content:'\25BC'} /* Level 1 */
+ul.menu-list li li.has-submenu>a>span.menu-expand{} /* Level 2 */
+ul.menu-list li li.has-submenu>a>span.menu-expand:after{content:'\25BA'} /* Level 2 */
+
+/* You can manage with of elements by width of a-tag */
+ul.menu-list li a{color:#333;text-decoration:none;padding:5px;} /* All levels */
+ul.menu-list li>a{} /* Level 1 */
+ul.menu-list li li>a{width:150px;} /* Level 2 */
+ul.menu-list li li li>a{} /* Level 3 */
+
+/* First Level*/
+ul.menu-list>li{margin:0px 5px 0px 0px;border:1px solid #000;}
+ul.menu-list>li>a{}
+ul.menu-list>li:hover{background:#000}
+ul.menu-list>li:hover>a{color:#fff;}
+ul.menu-list>li>a:hover{}
+/* End First Level*/
+
+/* Second Level*/
+ul.menu-list>li>ul{border:1px solid #000;}
+ul.menu-list>li>ul>li{background:#f7f7f7;}
+ul.menu-list>li>ul>li>a{}
+ul.menu-list>li>ul>li:hover{background:#ddd;}
+ul.menu-list>li>ul>li:hover>a{}
+ul.menu-list>li>ul>li>a:hover{}
+/* End Second Level*/
+
+/* Third Level*/
+ul.menu-list>li>ul>li>ul{border:1px solid #777;}
+ul.menu-list>li>ul>li>ul>li{background:#e7e7e7;}
+ul.menu-list>li>ul>li>ul>li>a{}
+ul.menu-list>li>ul>li>ul>li:hover{background:#ddd;}
+ul.menu-list>li>ul>li>ul>li:hover>a{}
+ul.menu-list>li>ul>li>ul>li>a:hover{}
+/* End Third Level*/
+
+/* End Style */
+
+
+/* End Menu Styles */
+
+
+/* RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 768px){
+
+/* Menu Styles */
+
+/* Init Logic */
+.menu-toggle-button{display:block;}
+.show-for-devices{display:block!important;}
+
+ul.menu-list{display:none;}
+ul.menu-list li{clear:both;float:none;}
+
+/* Handling Submenu */
+ul.menu-list ul{display:none;position:relative;}
+ul.menu-list ul li{}
+ul.menu-list ul ul{position:relative;top:100%;left:0%;}
+ul.menu-list li:hover>ul{display:none;}
+/* End Init Logic */
+
+/* Style */
+
+ul.menu-list li:hover>ul{background:#fff!ie;} /* Fix for IE7 */
+
+/* Submenu Expand Icon */
+ul.menu-list li.has-submenu>a>span.menu-expand{font-size: 0.6em;padding:0.8em;line-height:1em;position:absolute;right:0;z-index: 700} /* All levels */
+ul.menu-list>li.has-submenu>a>span.menu-expand{} /* Level 1 */
+ul.menu-list li li.has-submenu>a>span.menu-expand{} /* Level 2 */
+ul.menu-list li li.has-submenu>a>span.menu-expand:after{content:'\25BC';} /* Level 2 */
+
+/* You can manage with of elements by width of a-tag */
+ul.menu-list li a{color:#333;position:relative} /* All levels */
+ul.menu-list li>a{} /* Level 1 */
+ul.menu-list li li>a{width:auto;} /* Level 2 */
+ul.menu-list li li li>a{} /* Level 3 */
+
+/* First Level*/
+ul.menu-list>li{margin:0px;border:none;border-bottom:1px solid #000;}
+ul.menu-list>li>a{}
+ul.menu-list>li:hover{background:#000}
+ul.menu-list>li:hover>a{color:#fff;}
+ul.menu-list>li>a:hover{}
+/* End First Level*/
+
+/* Second Level*/
+ul.menu-list>li>ul{border:none;}
+ul.menu-list>li>ul>li{padding-left:5px;}
+ul.menu-list>li>ul>li>a{}
+ul.menu-list>li>ul>li:hover{background:#ddd;}
+ul.menu-list>li>ul>li:hover>a{}
+ul.menu-list>li>ul>li>a:hover{}
+/* End Second Level*/
+
+/* Third Level*/
+ul.menu-list>li>ul>li>ul{border:none;}
+ul.menu-list>li>ul>li>ul>li{padding-left:5px;}
+ul.menu-list>li>ul>li>ul>li>a{}
+ul.menu-list>li>ul>li>ul>li:hover{background:#ddd;}
+ul.menu-list>li>ul>li>ul>li:hover>a{}
+ul.menu-list>li>ul>li>ul>li>a:hover{}
+/* End Third Level*/
+
+/* End Style */
+
+
+/* End Menu Styles */
+
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>DaisyNav Demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<script src="demo-resources/jquery-1.10.2.min.js"></script>
+		<link rel="stylesheet" href="demo-resources/demo.css">
+		
+		<script src="jquery.daisynav.min.js"></script>
+		<link rel="stylesheet" href="daisynav.css">
+
+<script>	
+	jQuery(document).ready(function($){
+		$.daisyNav();
+	});
+</script>	
+	</head>
+	<body>
+
+<div class="main">	
+
+
+<section>
+<h1>Build responsive navigation with DaisyNav jQuery Plugin</h1>
+<hr />
+</section>
+
+<section>
+<h1>Getting Started</h1>
+<p>This plugin contains pretty cool built-in css for navigation, you can use it on your website, or use your own styles - it's no matters.</p>
+
+<h2>Including DaisyNav to your webpage</h2>
+<p>
+Copy daisynav folder somewhere to your project-folder, for example to <strong>js/</strong> and include jquery.daisynav.min.js to your webpage.<br />
+Please note: DaisyNav requires jQuery, you should include jQuery the first and then include DaisyNav
+</p>
+<pre><code>&lt;script src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="js/daisynav/jquery.daisynav.min.js"&gt;&lt;/script&gt;</code></pre>
+<p>
+We recommend you to merge daisynav styles with your main style.css file, or you can implement it as is:<br />
+</p>
+<pre><code>&lt;link rel="stylesheet" href="js/daisynav/daisynav.css"&gt;</code></pre>
+
+
+
+<h2>Recommended Menu Structure</h2>
+<p>
+You should use <strong>&lt;ul&gt;</strong> tag with class <strong>"menu-list"</strong> for your menu. <br />
+For each &lt;li&gt; that contains sub-menu you should add <strong>"has-submenu"</strong> class. <br />
+For each sub-menu &lt;ul&gt; tag you should use <strong>"sub-menu"</strong> class. <br />
+<br />
+Also you can add toggle button with class <strong>"menu-toggle-button"</strong>, that hides/shows menu, we recommend use it for mobile devices.<br />
+You can specify different menu for each toggle button by adding data-option to button: <strong>data-menu-id="MENU-ID"</strong> or <strong>data-menu-id="MENU-ID-1 MENU-ID-2"</strong>.<br />
+<br />
+Please see example below.
+</p>
+
+<div>
+<!-- Toggle button for menu, you can place it anywhere -->
+<div class="menu-toggle-button" data-menu-id="demo-menu">≡</div>
+
+<!-- Menu Structure -->
+<ul class="menu-list" id="demo-menu">
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 3</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 3.1</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.2</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.2.1</a></li>
+          <li><a href="#">Item 3.2.2</a></li>
+          <li><a href="#">Item 3.2.3</a></li>
+          <li><a href="#">Item 3.2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3.3</a></li>
+      <li><a href="#">Item 3.4</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.5</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.5.1</a></li>
+          <li><a href="#">Item 3.5.2</a></li>
+          <li><a href="#">Item 3.5.3</a></li>
+          <li><a href="#">Item 3.5.4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Item 4</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 5</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 5.1</a></li>
+      <li><a href="#">Item 5.2</a></li>
+      <li><a href="#">Item 5.3</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 5.4</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 5.4.1</a></li>
+          <li><a href="#">Item 5.4.2</a></li>
+          <li><a href="#">Item 5.4.3</a></li>
+          <li><a href="#">Item 5.4.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 5.5</a></li>                    
+    </ul>
+  </li>
+</ul>
+</div>
+
+<pre><code>&lt;!-- Toggle button for menu, you can place it anywhere --&gt;
+&lt;div class="menu-toggle-button" data-menu-id="demo-menu"&gt;&#8801;&lt;/div&gt;
+
+&lt;!-- Menu Structure --&gt;
+&lt;ul class="menu-list" id="demo-menu"&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Item 3&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="sub-menu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Item 3.2&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="sub-menu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.2.1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.2.2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.2.3&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.2.4&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.3&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.4&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Item 3.5&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="sub-menu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.5.1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.5.2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.5.3&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 3.5.4&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 4&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Item 5&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="sub-menu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.3&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="has-submenu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;Item 5.4&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="sub-menu"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.4.1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.4.2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.4.3&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.4.4&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Item 5.5&lt;/a&gt;&lt;/li&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+
+</section>
+
+<section class="support-section">
+<h1>Examples</h1>
+<p>Advanced toggle-button</p>
+<h2>Bind two menus on one button</h2>
+<p>
+List all menu id's in <strong>"data-menu-id"</strong> that you would like to handle with toggle button:
+</p>
+
+<pre><code>&lt;div class="menu-toggle-button" data-menu-id="demo-menu-1 demo-menu-2"&gt; Open 2 Menus ≡&lt;/div&gt;</code></pre>
+
+<div>
+<!-- Toggle button for menu, you can place it anywhere -->
+<div class="menu-toggle-button" data-menu-id="demo-menu-1 demo-menu-2"> Open Both Menus ≡</div>
+
+<div>
+<ul class="menu-list" id="demo-menu-1">
+<p>Menu 1:</p>
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 3</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 3.1</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.2</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.2.1</a></li>
+          <li><a href="#">Item 3.2.2</a></li>
+          <li><a href="#">Item 3.2.3</a></li>
+          <li><a href="#">Item 3.2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3.3</a></li>
+      <li><a href="#">Item 3.4</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.5</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.5.1</a></li>
+          <li><a href="#">Item 3.5.2</a></li>
+          <li><a href="#">Item 3.5.3</a></li>
+          <li><a href="#">Item 3.5.4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Item 4</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 5</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 5.1</a></li>
+      <li><a href="#">Item 5.2</a></li>
+      <li><a href="#">Item 5.3</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 5.4</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 5.4.1</a></li>
+          <li><a href="#">Item 5.4.2</a></li>
+          <li><a href="#">Item 5.4.3</a></li>
+          <li><a href="#">Item 5.4.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 5.5</a></li>                    
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div>
+<ul class="menu-list" id="demo-menu-2">
+<p>Menu 2:</p>
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 3</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 3.1</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.2</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.2.1</a></li>
+          <li><a href="#">Item 3.2.2</a></li>
+          <li><a href="#">Item 3.2.3</a></li>
+          <li><a href="#">Item 3.2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3.3</a></li>
+      <li><a href="#">Item 3.4</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.5</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.5.1</a></li>
+          <li><a href="#">Item 3.5.2</a></li>
+          <li><a href="#">Item 3.5.3</a></li>
+          <li><a href="#">Item 3.5.4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Item 4</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 5</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 5.1</a></li>
+      <li><a href="#">Item 5.2</a></li>
+      <li><a href="#">Item 5.3</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 5.4</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 5.4.1</a></li>
+          <li><a href="#">Item 5.4.2</a></li>
+          <li><a href="#">Item 5.4.3</a></li>
+          <li><a href="#">Item 5.4.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 5.5</a></li>                    
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+
+
+<h2>Bind each menu for different buttons</h2>
+<p>
+Place menu id in <strong>"data-menu-id"</strong> that you would like to handle with toggle button:
+</p>
+
+<pre><code>&lt;div class="menu-toggle-button" data-menu-id="demo-menu-3"&gt; Menu 1 ≡&lt;/div&gt;
+&lt;div class="menu-toggle-button" data-menu-id="demo-menu-4"&gt; Menu 2 ≡&lt;/div&gt;</code></pre>
+
+<div>
+<!-- Toggle button for menu, you can place it anywhere -->
+<div class="menu-toggle-button" data-menu-id="demo-menu-3"> Menu 1 ≡</div>
+
+<div>
+<ul class="menu-list" id="demo-menu-3">
+<p>Menu 1:</p>
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 3</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 3.1</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.2</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.2.1</a></li>
+          <li><a href="#">Item 3.2.2</a></li>
+          <li><a href="#">Item 3.2.3</a></li>
+          <li><a href="#">Item 3.2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3.3</a></li>
+      <li><a href="#">Item 3.4</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.5</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.5.1</a></li>
+          <li><a href="#">Item 3.5.2</a></li>
+          <li><a href="#">Item 3.5.3</a></li>
+          <li><a href="#">Item 3.5.4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Item 4</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 5</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 5.1</a></li>
+      <li><a href="#">Item 5.2</a></li>
+      <li><a href="#">Item 5.3</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 5.4</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 5.4.1</a></li>
+          <li><a href="#">Item 5.4.2</a></li>
+          <li><a href="#">Item 5.4.3</a></li>
+          <li><a href="#">Item 5.4.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 5.5</a></li>                    
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+<div class="menu-toggle-button" data-menu-id="demo-menu-4"> Menu 2 ≡</div>
+
+<div>
+<ul class="menu-list" id="demo-menu-4">
+<p>Menu 2:</p>
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 3</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 3.1</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.2</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.2.1</a></li>
+          <li><a href="#">Item 3.2.2</a></li>
+          <li><a href="#">Item 3.2.3</a></li>
+          <li><a href="#">Item 3.2.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3.3</a></li>
+      <li><a href="#">Item 3.4</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 3.5</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 3.5.1</a></li>
+          <li><a href="#">Item 3.5.2</a></li>
+          <li><a href="#">Item 3.5.3</a></li>
+          <li><a href="#">Item 3.5.4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">Item 4</a></li>
+  <li class="has-submenu">
+    <a href="#">Item 5</a>
+    <ul class="sub-menu">
+      <li><a href="#">Item 5.1</a></li>
+      <li><a href="#">Item 5.2</a></li>
+      <li><a href="#">Item 5.3</a></li>
+      <li class="has-submenu">
+        <a href="#">Item 5.4</a>
+        <ul class="sub-menu">
+          <li><a href="#">Item 5.4.1</a></li>
+          <li><a href="#">Item 5.4.2</a></li>
+          <li><a href="#">Item 5.4.3</a></li>
+          <li><a href="#">Item 5.4.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 5.5</a></li>                    
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+
+</section>
+
+
+<section class="support-section">
+<h1>Support</h1>
+<ul>
+<li><a href="http://circlewaves.com/support/" title="Our Support" target="_blank">Our Support</a></li>
+<li><a href="http://circlewaves.com/products/freebies/daisynav-responsive-dropdown-navigation/" title="Official Plugin Page" target="_blank">Official Plugin Page</a></li>
+<li><a href="https://github.com/circlewaves/daisynav" title="Project on GitHub" target="_blank">Project on GitHub</a></li>
+</ul>
+</section>
+	
+
+
+
+<footer>
+<div class="logobox"><a href="http://circlewaves.com/" title="circlewaves.com" target="_blank"><img src="demo-resources/logo-cw.png" /></a></div>
+<div class="copybox">
+2013 &copy; Developed by <a href="http://circlewaves.com/" title="circlewaves.com" target="_blank">circlewaves.com</a> <br /> 
+<a href="http://twitter.com/CircleWavesLLC" target="_blank" title="Twitter">Twitter</a> | <a href="http://www.facebook.com/CircleWavesLLC" target="_blank" title="Facebook">Facebook</a>
+<br />
+Crafted with love to simplicity
+</div>
+</footer>
+
+
+</div>
+
+			
+	</body>
+</html>
