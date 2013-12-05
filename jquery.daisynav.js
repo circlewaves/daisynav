@@ -1,7 +1,7 @@
 /*
  *	DaisyNav - jQuery plugin 
  *	Handle responsive navigation in good way
- *	Version 1.0
+ *	Version 1.0.0
  *
  *	http://circlewaves.com/products/freebies/daisynav-responsive-dropdown-navigation/
  *
