@@ -1,0 +1,38 @@
+{
+    "name": "daisynav",
+    "title": "DaisyNav",
+    "description": "jQuery plugin helps handle responsive navigation on your website.",
+    "keywords": [
+        "responsive",
+        "navigation",
+        "dropdown",
+        "css",
+        "IE compatible",
+    ],
+    "version": "1.0",
+    "author": {
+        "name": "Circlewaves",
+        "url": "http://circlewaves.com/"
+    },
+    "maintainers": [
+        {
+            "name": "Max Kostinevich",
+            "email": "max@circlewaves.com",
+            "url": "http://circlewaves.com/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/circlewaves/daisynav/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/circlewaves/daisynav/issues",
+    "homepage": "http://circlewaves.com/products/freebies/daisynav-responsive-dropdown-navigation/",
+    "docs": "http://circlewaves.com/products/freebies/daisynav-responsive-dropdown-navigation/",
+    "demo": "http://demo.circlewaves.com/daisynav/",
+    "download": "https://github.com/circlewaves/daisynav/",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
